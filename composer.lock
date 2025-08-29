@@ -3358,12 +3358,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/PhageHagane/l5b-crud.git",
-                "reference": "55a64295d8c27f1c57b08fd57078b9235c5581f8"
+                "reference": "bae7a031e02b8b8bfb772114290ce73fe37b86d2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/PhageHagane/l5b-crud/zipball/55a64295d8c27f1c57b08fd57078b9235c5581f8",
-                "reference": "55a64295d8c27f1c57b08fd57078b9235c5581f8",
+                "url": "https://api.github.com/repos/PhageHagane/l5b-crud/zipball/bae7a031e02b8b8bfb772114290ce73fe37b86d2",
+                "reference": "bae7a031e02b8b8bfb772114290ce73fe37b86d2",
                 "shasum": ""
             },
             "default-branch": true,
@@ -3394,7 +3394,7 @@
             "support": {
                 "source": "https://github.com/PhageHagane/l5b-crud/tree/master"
             },
-            "time": "2025-03-12T05:16:02+00:00"
+            "time": "2025-08-29T00:59:04+00:00"
         },
         {
             "name": "psr/cache",
