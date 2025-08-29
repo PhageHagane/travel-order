@@ -47,9 +47,10 @@ class CreateDivisionsTable extends Migration
         // Remove permissions
         DB::table('permissions')
             ->whereIn('name', [
-                'StoreDivisionRequest',
-                'UpdateDivisionRequest',
-                'ManageDivisionRequest'
+                'View Division',
+                'Store Division',
+                'Update Division',
+                'Delete Division',
             ])
             ->delete();
     }

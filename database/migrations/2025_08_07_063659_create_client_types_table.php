@@ -46,9 +46,10 @@ class CreateClientTypesTable extends Migration
         // Remove permissions
         DB::table('permissions')
             ->whereIn('name', [
-                'StoreClientTypeRequest',
-                'UpdateClientTypeRequest',
-                'ManageClientTypeRequest'
+                'View ClientType',
+                'Store ClientType',
+                'Update ClientType',
+                'Delete ClientType',
             ])
             ->delete();
     }
