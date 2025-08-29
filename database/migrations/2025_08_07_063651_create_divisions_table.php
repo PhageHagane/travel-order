@@ -1,0 +1,56 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+class CreateDivisionsTable extends Migration
+{
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        if (!Schema::hasTable('divisions')) {
+            Schema::create('divisions', function (Blueprint $table) {
+                $table->bigIncrements('id');
+                $table->string('name');
+                $table->string('abbr')->nullable();
+                $table->softDeletes();
+                $table->timestamps();
+            });
+
+            // Insert permissions into the permissions table
+            $permissions = [
+                ['name' => 'View Division', 'guard_name' => 'web', 'created_at' => now(), 'updated_at' => now()],
+                ['name' => 'Store Division', 'guard_name' => 'web', 'created_at' => now(), 'updated_at' => now()],
+                ['name' => 'Update Division', 'guard_name' => 'web', 'created_at' => now(), 'updated_at' => now()],
+                ['name' => 'Delete Division', 'guard_name' => 'web', 'created_at' => now(), 'updated_at' => now()],
+            ];
+
+            // Use DB facade to insert permissions
+            DB::table('permissions')->insert($permissions);
+        }
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::dropIfExists('divisions');
+
+        // Remove permissions
+        DB::table('permissions')
+            ->whereIn('name', [
+                'StoreDivisionRequest',
+                'UpdateDivisionRequest',
+                'ManageDivisionRequest'
+            ])
+            ->delete();
+    }
+}
